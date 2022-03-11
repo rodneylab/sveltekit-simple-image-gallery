@@ -1,19 +1,3 @@
-<script context="module">
-  export const load = async ({ fetch }) => {
-    try {
-      const response = await fetch('/index.json', {
-        method: 'GET',
-        credentials: 'same-origin',
-      });
-      return {
-        props: { ...(await response.json()) },
-      };
-    } catch (error) {
-      console.error(error);
-    }
-  };
-</script>
-
 <script>
   import { browser } from '$app/env';
   import RibbonGallery from '$lib/components/RibbonGallery.svelte';

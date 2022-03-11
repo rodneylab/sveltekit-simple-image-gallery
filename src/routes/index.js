@@ -6,7 +6,8 @@ export async function get() {
     const imageDataArray = imageData.map((element) => element.default);
 
     return {
-      body: JSON.stringify({ data: imageDataArray }),
+      // body: JSON.stringify({ data: imageDataArray }),
+      body: { data: imageDataArray },
     };
   } catch (error) {
     console.error('Error: ', error);
