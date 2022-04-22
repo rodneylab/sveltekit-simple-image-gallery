@@ -12,7 +12,7 @@ export async function get() {
     console.error('Error: ', error);
     return {
       status: 500,
-      error: `Error in index.json data retrieval: ${error}`,
+      error: `Error in index.js data retrieval: ${error}`,
     };
   }
 }

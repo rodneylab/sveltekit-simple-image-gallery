@@ -35,7 +35,7 @@
 
 <style>
   :global(html) {
-    font-family: 'Inter';
+    font-family: Inter;
     background: #006e90;
     min-height: 100vh;
   }
