@@ -1,6 +1,8 @@
 {
   "name": "sveltekit-simple-image-gallery",
   "version": "0.0.1",
+  "license": "BSD-3-Clause",
+  "description": "Simple Svelte responsive image gallery: create a ribbon gallery, using Svelte dimension bindings to maintain the aspect ratio of all images.",
   "scripts": {
     "dev": "svelte-kit dev --port 3000",
     "build": "svelte-kit build",
@@ -33,5 +35,12 @@
     "vanilla-lazyload": "^17.8.2",
     "vite-imagetools": "^4.0.4"
   },
-  "type": "module"
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rodneylab/sveltekit-simple-image-gallery"
+  },
+  "bugs": {
+    "url": "https://github.com/rodneylab/sveltekit-simple-image-gallery/issues"
+  }
 }
