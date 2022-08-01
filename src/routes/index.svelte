@@ -1,7 +1,7 @@
 <script>
   import { browser } from '$app/env';
   import RibbonGallery from '$lib/components/RibbonGallery.svelte';
-  import '@fontsource/inter';
+  import '@fontsource/inter/latin.css';
   import { onMount } from 'svelte';
   import lazyload from 'vanilla-lazyload';
 
@@ -15,7 +15,7 @@
 
   // import image data for caching images
   (async () => {
-    await import.meta.glob('../lib/generated/*.js');
+    import.meta.glob('../lib/generated/*.js');
   })();
 </script>
 
