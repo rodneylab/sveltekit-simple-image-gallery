@@ -1,4 +1,7 @@
-export async function GET() {
+import { error } from '@sveltejs/kit';
+
+/** @type {import('./$types').PageLoad} */
+export async function load() {
   try {
     const images = import.meta.glob('../lib/generated/*.js');
     const imageDataPromises = Object.keys(images).map((path) => images[path]());
@@ -6,13 +9,10 @@ export async function GET() {
     const imageDataArray = imageData.map((element) => element.default);
 
     return {
-      body: { data: imageDataArray },
+      data: imageDataArray,
     };
-  } catch (error) {
-    console.error('Error: ', error);
-    return {
-      status: 500,
-      error: `Error in index.js data retrieval: ${error}`,
-    };
+  } catch (err) {
+    console.error('Error: ', err);
+    throw error(500, `Error in index.js data retrieval: ${err}`);
   }
 }

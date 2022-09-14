@@ -1,5 +1,5 @@
 <script lang>
-  import { browser } from '$app/env';
+  import { browser } from '$app/environment';
   import NextIcon from '$lib/components/NextIcon.svelte';
   import PreviousIcon from '$lib/components/PreviousIcon.svelte';
   import { Image } from '@rodneylab/sveltekit-components';

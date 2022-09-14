@@ -1,10 +1,11 @@
 <script>
-  import { browser } from '$app/env';
+  import { browser } from '$app/environment';
   import RibbonGallery from '$lib/components/RibbonGallery.svelte';
   import '@fontsource/inter/latin.css';
   import { onMount } from 'svelte';
   import lazyload from 'vanilla-lazyload';
 
+  /** @type {import('./$types').PageData} */
   export let data;
 
   onMount(() => {
@@ -30,7 +31,7 @@
 
 <div class="container">
   <header class="header"><h1>Basic Responsive Ribbon Gallery</h1></header>
-  <main><RibbonGallery {data} /></main>
+  <main><RibbonGallery data={data.data} /></main>
 </div>
 
 <style>
