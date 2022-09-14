@@ -1,32 +1,32 @@
 [
-  {
-    "filename": "image-1.jpg",
-    "alt": "Profile headshot of person laughing.",
-    "title": "Image 1"
-  },
-  {
-    "filename": "image-2.jpg",
-    "alt": "Head and shoulder shot of a person laughing, facing the camera.",
-    "title": "Image 2"
-  },
-  {
-    "filename": "image-3.jpg",
-    "alt": "Head and shoulders shot of two people, one kissing the other on the cheek while the other smiles.",
-    "title": "Image 3"
-  },
-  {
-    "filename": "image-4.jpg",
-    "alt": "Head and shoulders shot of a person wiht a beach backdrop.  The person has their eyes closed and head tipped back, drinking the moment and smiling.",
-    "title": "Image 4"
-  },
-  {
-    "filename": "image-5.jpg",
-    "alt": "Picture os a person leaning forward into the cmaera arms raides and laughing.",
-    "title": "Image 5"
-  },
-  {
-    "filename": "image-6.jpg",
-    "alt": "Upper body shot of a person, arms crossed with a neutral expression",
-    "title": "Image 6"
-  }
+	{
+		"filename": "image-1.jpg",
+		"alt": "Profile headshot of person laughing.",
+		"title": "Image 1"
+	},
+	{
+		"filename": "image-2.jpg",
+		"alt": "Head and shoulder shot of a person laughing, facing the camera.",
+		"title": "Image 2"
+	},
+	{
+		"filename": "image-3.jpg",
+		"alt": "Head and shoulders shot of two people, one kissing the other on the cheek while the other smiles.",
+		"title": "Image 3"
+	},
+	{
+		"filename": "image-4.jpg",
+		"alt": "Head and shoulders shot of a person wiht a beach backdrop.  The person has their eyes closed and head tipped back, drinking the moment and smiling.",
+		"title": "Image 4"
+	},
+	{
+		"filename": "image-5.jpg",
+		"alt": "Picture os a person leaning forward into the cmaera arms raides and laughing.",
+		"title": "Image 5"
+	},
+	{
+		"filename": "image-6.jpg",
+		"alt": "Upper body shot of a person, arms crossed with a neutral expression",
+		"title": "Image 6"
+	}
 ]
