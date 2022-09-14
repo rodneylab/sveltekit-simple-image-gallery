@@ -4,9 +4,9 @@
   "license": "BSD-3-Clause",
   "description": "Simple Svelte responsive image gallery: create a ribbon gallery, using Svelte dimension bindings to maintain the aspect ratio of all images.",
   "scripts": {
-    "dev": "vite dev --port 3030",
+    "dev": "vite dev",
     "build": "vite build",
-    "preview": "vite preview --port 3030",
+    "preview": "vite preview",
     "lint": "prettier --ignore-path .gitignore --check --plugin-search-dir=. . && eslint --ignore-path .gitignore .",
     "check": "svelte-check --fail-on-warnings",
     "lint:css": "stylelint \"src/**/*.{css,svelte}\"",
@@ -17,20 +17,21 @@
     "@commitlint/config-conventional": "^17.0.3",
     "@fontsource/inter": "^4.5.11",
     "@iconify/svelte": "^2.2.1",
-    "@rodneylab/sveltekit-components": "^0.2.13",
-    "@sveltejs/adapter-static": "1.0.0-next.38",
+    "@rodneylab/sveltekit-components": "^1.0.1",
+    "@sveltejs/adapter-static": "1.0.0-next.43",
     "@sveltejs/kit": "next",
     "commitlint": "^17.0.3",
     "eslint": "^8.21.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-svelte3": "^4.0.0",
     "husky": "^8.0.1",
+    "leaflet": "^1.8.0",
     "postcss-html": "^1.5.0",
     "prettier": "^2.7.1",
     "prettier-plugin-svelte": "^2.7.0",
-    "sharp": "~0.30.7",
+    "sharp": "~0.31.0",
     "stylelint": "^14.9.1",
-    "stylelint-config-recommended": "^8.0.0",
+    "stylelint-config-recommended": "^9.0.0",
     "svelte": "^3.49.0",
     "svelte-check": "^2.8.0",
     "vanilla-lazyload": "^17.8.3",
@@ -46,6 +47,7 @@
     "url": "https://github.com/rodneylab/sveltekit-simple-image-gallery/issues"
   },
   "peerDependencies": {
+    "leaflet": "^1.8.0",
     "vite": "^3.0.4"
   }
 }
