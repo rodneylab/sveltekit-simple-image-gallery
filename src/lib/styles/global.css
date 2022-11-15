@@ -1,0 +1,9 @@
+html {
+	font-family: Inter;
+	background: #006e90;
+	min-height: 100vh;
+}
+
+body {
+	margin: 0;
+}
