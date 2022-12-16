@@ -38,7 +38,7 @@ pnpm run build
 
 1. The project includes the raw images in the `src/lib/assets` folder. Add your images there.
 2. `src/data/image.json` links the image files names with alt text and titles. Update this manually or generate it based on an existing source for your images.
-3. `src/data/generated` has a JavaScript file for each base image, each containing data needed to create the responsive and next-gen image set from the base images. I generated these files automatically using the `generate-responsive-image-data.js` script in the project root directory. You can update it to suite your needs, then run it with `node`. I prefer using vite-node (which will also work with TypeScript projects):
+3. `src/data/generated` has a JavaScript file for each base image, each containing data needed to create the responsive and next-gen image set from the base images. I generated these files automatically using the `generate-responsive-image-data.js` script in the project root directory. You can update it to suit your needs, then run it with `node`. I prefer using vite-node (which will also work with TypeScript projects):
 
 ```shell
 pnpm add -D vite-node
