@@ -1,6 +1,6 @@
-import meta from '$lib/assets/image-5.jpg?w=1280&metadata';
-import srcset from '$lib/assets/image-5.jpg?w=1280;640;320&format=jpeg&srcset';
-import srcsetWebp from '$lib/assets/image-5.jpg?w=1280;640;320&format=webp&srcset';
+import meta from '$lib/assets/image-5.jpg?w=1280&as=meta:height;src;width';
+import srcset from '$lib/assets/image-5.jpg?w=1280;640;320&format=jpeg&as=srcset';
+import srcsetWebp from '$lib/assets/image-5.jpg?w=1280;640;320&format=webp&as=srcset';
 
 const { height, src, width } = meta;
 
@@ -15,7 +15,7 @@ const data = {
 		{ srcset, type: 'image/jpeg' },
 	],
 	placeholder:
-		'data:image/jpeg;base64,/9j/2wBDAAwREhMUFBUUFBofGhUaHiIcGhohKC4jJB4hMzg/PTouKC5CRFpMPi5XRTc3VmBRVlpgZmRkQklveXFmeFtlaWf/2wBDAQgMDQwNDw8PDxFgEBIaVmBaYFpgY2NjY2BjYGBiY2NjY2NjY2NjY2NjY2JjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAPAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAABQP/xAAVAQEBAAAAAAAAAAAAAAAAAAACBP/aAAwDAQACEAMQAAAAqQovK//EACMQAAEDAgUFAAAAAAAAAAAAAAEAAgMEERITIUFhFBVRUqL/2gAIAQEAAT8AqGQMaXkFxxYub8LpqLcuUzJGzsppBeBpuJtxp6+V26+ub8hf/8QAGBEAAgMAAAAAAAAAAAAAAAAAAAIRElH/2gAIAQIBAT8As+yf/8QAGREAAQUAAAAAAAAAAAAAAAAAAwABESEi/9oACAEDAQE/AHGKsQv/2Q==',
+		'data:image/jpeg;base64,/9j/2wBDAAwREhMUFBUUFBofGhUaHiIcGhohKC4jJB4hMzg/PTouKC5CRFpMPi5XRTc3VmBRVlpgZmRkQklveXFmeFtlaWf/2wBDAQgMDQwNDw8PDxFgEBIaVmBaYFpgY2NjY2BjYGBiY2NjY2NjY2NjY2NjY2JjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAPAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAABQP/xAAVAQEBAAAAAAAAAAAAAAAAAAACBP/aAAwDAQACEAMQAAAAoSovK//EACQQAAEDAgQHAAAAAAAAAAAAAAEAAgMEERIhQWETFBUjUVKi/9oACAEBAAE/AKhkDGl5aXHFi3vsuWotS5TMkE7KaQdhpuJtRl6+V06+fE+Qv//EABcRAAMBAAAAAAAAAAAAAAAAAAACElH/2gAIAQIBAT8Ap9P/xAAZEQABBQAAAAAAAAAAAAAAAAADAAERISL/2gAIAQMBAT8AcYqzC//Z',
 };
 
 export { data as default };

@@ -27,7 +27,13 @@ async function generateImageMeta(sourcePromise) {
 		const { format, width, height } = metadataResult;
 		const { r, g, b } = dominantColourObject;
 		const dominantColourValue = `#${r.toString(16)}${g.toString(16)}${b.toString(16)}`;
-		return { dominantColour: dominantColourValue, placeholder, format, width, height };
+		return {
+			dominantColour: dominantColourValue,
+			placeholder,
+			format,
+			width,
+			height,
+		};
 	} catch (error) {
 		console.error(`Error in generateImageMeta, generate-responsive-image-data.js: ${error}`);
 	}
@@ -48,9 +54,9 @@ async function generateGalleryData() {
 			const imageSizesString = imageOutputSizes
 				.filter((imageElement) => imageElement <= width)
 				.join(';');
-			const meta = `import meta from '$lib/assets/${filename}?w=${maxWidth}&metadata';`;
-			const srcset = `import srcset from '$lib/assets/${filename}?w=${imageSizesString}&format=jpeg&srcset';`;
-			const srcsetWebp = `import srcsetWebp from '$lib/assets/${filename}?w=${imageSizesString}&format=webp&srcset';`;
+			const meta = `import meta from '$lib/assets/${filename}?w=${maxWidth}&as=meta:height;src;width';`;
+			const srcset = `import srcset from '$lib/assets/${filename}?w=${imageSizesString}&format=jpeg&as=srcset';`;
+			const srcsetWebp = `import srcsetWebp from '$lib/assets/${filename}?w=${imageSizesString}&format=webp&as=srcset';`;
 			const metadata = `\nconst { height, src, width } = meta;`;
 			const exportStatement = `
 const data = {
