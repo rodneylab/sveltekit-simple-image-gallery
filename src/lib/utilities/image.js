@@ -1,7 +1,7 @@
+import { makeDirectory } from './file.js';
 import fs, { promises as fsp } from 'fs';
 import path from 'path';
 import sharp from 'sharp';
-import { makeDirectory } from './file.js';
 
 export const IMAGE_DIR = '/src/lib/assets/';
 export const IMAGE_PUBLIC_DIR = '/assets/';
@@ -12,7 +12,7 @@ export const dominantColour = async ({ source }) => {
 		const { dominant } = await image.stats();
 		return dominant;
 	} catch (error) {
-		console.error('Error determining dominant colour: ', source);
+		console.error(`Error determining dominant colour (${error}): `, source);
 	}
 };
 
@@ -57,7 +57,7 @@ export const lowResolutionPlaceholder = async ({ source }) => {
 			.toBuffer({ resolveWithObject: false });
 		return `data:image/jpeg;base64,${(await buffer).toString('base64')}`;
 	} catch (error) {
-		console.error('Error generating low resolution placeholder: ', source);
+		console.error(`Error generating low resolution placeholder (${error}): `, source);
 	}
 };
 
@@ -67,6 +67,6 @@ export const metadata = async ({ source }) => {
 		const { format, height, width } = await image.metadata();
 		return { format, height, width };
 	} catch (error) {
-		console.error('Error determining image meta: ', source);
+		console.error(`Error determining image meta: (${error})`, source);
 	}
 };

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+        <!-- https://api.iconify.design/lucide:skip-forward.svg -->
+        <symbol viewBox="0 0 24 24" id="next">
+            <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="m5 4l10 8l-10 8zm14 1v14" />
+        </symbol>
+        <!-- https://api.iconify.design/lucide:skip-back.svg -->
+        <symbol viewBox="0 0 24 24" id="previous">
+            <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M19 20L9 12l10-8zM5 19V5" />
+        </symbol>
+    </defs>
+</svg>

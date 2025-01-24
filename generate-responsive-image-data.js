@@ -1,7 +1,7 @@
+import { makeDirectory } from './src/lib/utilities/file.js';
+import { dominantColour, lowResolutionPlaceholder, metadata } from './src/lib/utilities/image.js';
 import fs, { promises as fsp } from 'fs';
 import path from 'path';
-import { dominantColour, lowResolutionPlaceholder, metadata } from './src/lib/utilities/image.js';
-import { makeDirectory } from './src/lib/utilities/file.js';
 
 const __dirname = path.resolve();
 const maxWidth = 1280;
