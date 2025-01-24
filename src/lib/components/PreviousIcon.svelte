@@ -1,34 +1,36 @@
-<script>
-	import Icon, { addCollection } from '@iconify/svelte/dist/OfflineIcon.svelte';
-
-	export let colour = undefined;
-	export let label = 'previous icon';
-	export let width = 32;
-	export let height = width;
-	export let ariaHidden = false;
-
-	const id = Date.now().toString(16) + ((Math.random() * 0x1000000) | 0).toString(16);
-
-	addCollection({
-		prefix: 'feather',
-		icons: {
-			'skip-back': {
-				body: '<path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20L9 12l10-8v16zM5 19V5"/>',
-			},
-		},
-		width: 24,
-		height: 24,
-	});
-
-	// https://api.iconify.design/feather.json?icons=skip-back
+<script lang="ts">
+	let {
+		colour = undefined,
+		label = 'previous',
+		width = 16,
+		height = width,
+		ariaHidden = false,
+	}: {
+		colour?: string | undefined;
+		label?: string;
+		width?: number;
+		height?: number;
+		ariaHidden?: boolean;
+	} = $props();
 </script>
 
-<Icon
-	{id}
-	aria-label={label}
-	{ariaHidden}
-	icon="feather:skip-back"
-	{width}
-	{height}
-	color={colour}
-/>
+<div class="logo">
+	<svg
+		aria-label={label}
+		aria-hidden={ariaHidden}
+		role="img"
+		{width}
+		{height}
+		viewBox="0 0 24 24"
+		fill={colour}
+	>
+		<use href="/sprite.svg#previous" />
+	</svg>
+</div>
+
+<style>
+	.logo {
+		display: flex;
+		align-items: center;
+	}
+</style>

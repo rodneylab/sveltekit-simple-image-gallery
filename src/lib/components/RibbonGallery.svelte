@@ -3,26 +3,27 @@
 	import NextIcon from '$lib/components/NextIcon.svelte';
 	import PreviousIcon from '$lib/components/PreviousIcon.svelte';
 	import { Image } from '@rodneylab/sveltekit-components';
-	import { afterUpdate, onMount } from 'svelte';
+	import { onMount } from 'svelte';
 
-	export let data;
+	let { data } = $props();
 
-	let containerHeight;
-	let containerWidth;
+	let containerHeight = $state(0);
+	let containerWidth = $state(0);
 
 	let maxAspectRatio = 1.0;
 
-	$: aspectRatios = data.map((element) => {
-		const { width, height } = element;
-		const aspectRatio = width / height;
-		if (aspectRatio > maxAspectRatio) {
-			maxAspectRatio = aspectRatio;
-		}
-		return aspectRatio;
-	});
+	let aspectRatios = $derived(
+		data.map((element) => {
+			const { width, height } = element;
+			const aspectRatio = width / height;
+			if (aspectRatio > maxAspectRatio) {
+				maxAspectRatio = aspectRatio;
+			}
+			return aspectRatio;
+		}),
+	);
 
-	$: height = 512;
-	$: calculateHeight;
+	let height = $state(512);
 	function calculateHeight() {
 		if (containerHeight && containerWidth) {
 			const maxHeight = containerHeight - 59;
@@ -38,16 +39,14 @@
 		}
 	});
 
-	afterUpdate(() => {
-		calculateHeight();
-	});
+	let widths = $derived([
+		...aspectRatios.map((element) => parseFloat((element * height).toFixed(2))),
+	]);
+	let sizes = $derived([...widths.map((element) => `${element}px`)]);
+	let currentIndex = $state(0);
+	let imageTitle = $derived(data[currentIndex].title);
 
-	$: widths = [...aspectRatios.map((element) => parseFloat((element * height).toFixed(2)))];
-	$: sizes = [...widths.map((element) => `${element}px`)];
-	$: currentIndex = 0;
-	$: imageTitle = data[currentIndex].title;
-
-	const imageCount = data.length;
+	let imageCount = $derived(data.length);
 
 	function advanceIndex() {
 		currentIndex = (currentIndex + 1) % imageCount;
@@ -88,6 +87,7 @@
 	}
 </script>
 
+<svelte:window onresize={calculateHeight} />
 <div class="container" bind:clientWidth={containerWidth} bind:clientHeight={containerHeight}>
 	<div class="ribbon">
 		<section class="images">
@@ -113,7 +113,7 @@
 		<div class="controls">
 			<span class="prev-next-button">
 				<button
-					on:click={() => {
+					onclick={() => {
 						scrollToPreviousImage();
 					}}><PreviousIcon /><span class="screen-reader-text">previous image</span></button
 				></span
@@ -121,7 +121,7 @@
 			<p>{currentIndex + 1} of {imageCount}</p>
 			<span class="prev-next-button">
 				<button
-					on:click={() => {
+					onclick={() => {
 						scrollToNextImage();
 					}}><NextIcon /><span class="screen-reader-text">next image</span></button
 				></span
@@ -192,7 +192,7 @@
 	}
 
 	.title-text {
-		padding-right: auto;
+		padding-inline-end: auto;
 	}
 
 	.screen-reader-text {

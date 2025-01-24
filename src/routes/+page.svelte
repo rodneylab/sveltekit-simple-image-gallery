@@ -6,8 +6,8 @@
 	import { onMount } from 'svelte';
 	import lazyload from 'vanilla-lazyload';
 
-	/** @type {import('./$types').PageData} */
-	export let data;
+	/** @type {{import('./$types').PageData}} */
+	let { data } = $props();
 
 	onMount(() => {
 		if (browser) {
