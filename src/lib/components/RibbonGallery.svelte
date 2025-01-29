@@ -10,7 +10,7 @@
 	let containerHeight = $state(0);
 	let containerWidth = $state(0);
 
-	let maxAspectRatio = 1.0;
+	let maxAspectRatio = $state(1.0);
 
 	let aspectRatios = $derived(
 		data.map((element) => {
@@ -189,10 +189,6 @@
 		color: #eef5db;
 		padding: 0.75rem 0.5rem;
 		cursor: pointer;
-	}
-
-	.title-text {
-		padding-inline-end: auto;
 	}
 
 	.screen-reader-text {
